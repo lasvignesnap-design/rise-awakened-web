@@ -1,0 +1,423 @@
+/* Tipografías base */
+:root {
+  --bg-black: #000000;
+  --bg-dark: #0d0d0d;
+  --bg-card: #1a1a1a;
+  --text-main: #f2f2f2;
+  --text-muted: #c4c4c4;
+  --accent-cyan: #00e5ff;
+  --accent-red: #8a1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-black);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header / Menú */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--accent-cyan);
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  height: 90vh;
+  margin-top: 64px; /* espacio por el header fijo */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.2);
+  opacity: 0.35;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0, 229, 255, 0.25), transparent),
+              linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-logo {
+  max-width: 160px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-cyan);
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-cyan);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Secciones */
+
+.section {
+  padding: 80px 20px;
+}
+
+.section-dark {
+  background: var(--bg-dark);
+}
+
+.section-light {
+  background: #050505;
+}
+
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-cyan);
+  margin-bottom: 24px;
+}
+
+.section p {
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+/* Miembros */
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.member-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.member-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+.member-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.member-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-cyan);
+}
+
+/* Música */
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.music-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #222;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.music-cover {
+  width: 100%;
+  height: 160px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #111, #333);
+  margin-bottom: 12px;
+}
+
+.music-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.music-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-cyan);
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--accent-cyan);
+  color: #000;
+}
+
+.music-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-3px);
+}
+
+/* Galería */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  filter: grayscale(0%) contrast(1.1);
+  transform: translateY(-3px);
+}
+
+/* Merch */
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.merch-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #222;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.merch-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.merch-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.merch-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.merch-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-3px);
+}
+
+/* Footer */
+
+.footer {
+  background: #000;
+  padding: 24px 20px;
+  border-top: 1px solid #111;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer-social a {
+  margin-left: 12px;
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--text-main);
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--accent-cyan);
+}
+
+/* Animaciones */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .nav a {
+    margin-left: 12px;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-logo {
+    max-width: 120px;
+  }
+
+  .section {
+    padding: 60px 16px;
+  }
+}
